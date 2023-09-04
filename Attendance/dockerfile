@@ -1,0 +1,15 @@
+# Dockerfile
+FROM node:14
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+# Expose port 8080 for the documentation
+EXPOSE 8080
+
+CMD ["node", "app.js"]
